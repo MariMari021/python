@@ -4,10 +4,13 @@
 lista = []
 
 while True:
-    valor = int(input('Digite um número: '))
-    if valor < 0:
-        break
-    else:
-        lista.append(valor)
+    try:
+        valor = int(input('Digite um número: '))
+        if valor < 0:
+            break
+        else:
+            lista.append(valor)
+    except:
+        print('Digite apenas números')
 
 print(lista)

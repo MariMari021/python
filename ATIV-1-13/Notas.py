@@ -50,7 +50,7 @@ for i in range(1, 11):
     soma= soma + idade
     print(soma)
 '''
-
+'''
 carro = ['Ferrari', 'Vermelho', '2024']
 print(carro)
 carro.append('OI')
@@ -69,3 +69,38 @@ print(sum(idades)/len(idades))
 
 for ele in range(3):
     idades.append(int(input('Digite uma idade: ')))
+
+'''
+
+#listas aninhadas
+
+
+lista = []
+lista_auxiliar_nome = []
+lista_auxiliar_idade = []
+
+for ele in range(3):
+    lista_auxiliar_nome.append(input('Nome: '))
+    lista_auxiliar_idade.append(int(input('Idade: ')))
+    #lista principal
+lista.append(lista_auxiliar_nome[:])
+lista.append(lista_auxiliar_idade[:])
+
+print(lista)
+
+
+'''
+lista = []
+lista_auxiliar = []
+
+
+
+for ele in range(3):
+    lista_auxiliar.append(input('Nome: '))
+    lista_auxiliar.append(int(input('Idade: ')))
+    #lista principal
+    lista.append(lista_auxiliar[:])
+    lista_auxiliar.clear()
+
+print(lista)
+print(lista[0][1])'''

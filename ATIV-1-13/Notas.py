@@ -71,7 +71,7 @@ for ele in range(3):
     idades.append(int(input('Digite uma idade: ')))
 
 '''
-
+'''
 #listas aninhadas
 
 
@@ -89,7 +89,7 @@ lista.append(lista_auxiliar_idade[:])
 print(lista)
 
 
-'''
+
 lista = []
 lista_auxiliar = []
 
@@ -104,3 +104,28 @@ for ele in range(3):
 
 print(lista)
 print(lista[0][1])'''
+
+
+#dicionários
+
+cadastro = {'nome': 'Mariana', 'Idade': 25}
+
+print(cadastro['nome'])
+print(cadastro.values())
+print(cadastro.keys())
+print(cadastro.items())
+
+for chave in cadastro:
+    print(cadastro[chave])
+
+for chave, valor in cadastro.items():
+    print(chave)
+
+#composto
+
+cadastro = {'Nomes': ['a', 'b', 'c'],
+            'Idade': [10, 20, 30]}
+
+
+print(cadastro['Idade'])
+print(max(cadastro['Idade']))

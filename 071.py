@@ -1,19 +1,7 @@
 #Escreva um programa que leia diversos alunos, crie um dicionário com as notas de dele
 # em três disciplinas: matemática, português e história. Em seguida, exiba a média das notas do aluno.
+
 '''
-carro = dict ()
-concessionaria = list ()
-
-
-for c in range(0, 3):
-    carro['nome'] = str(input('Nome do Carro '))
-    carro['ano'] = int(input('Ano do Carro '))
-    concessionaria.append(carro.copy())
-
-print(concessionaria)
-print(carro)'''
-
-
 alunos =dict()
 
 
@@ -26,3 +14,27 @@ for i in range(0, 4):
     alunos[nome] = {'matemática': matematica, 'história': historia, 'portugues': portugues, 'média': media}
 
     print(alunos)
+'''
+
+#resolução professor
+
+alunos = {}
+
+while True:
+    try:
+        nome = input('Digite o nome do aluno [sair para acabar]:')
+        if nome == 'sair':
+            break
+
+        matematica = float(input('Digite sua nota em matemática: '))
+        portugues = float(input('Digite sua nota em português: '))
+        historia = float(input('Digite sua nota em história: '))
+
+        alunos[nome] = {'Matemática': matematica, 'Português': portugues, 'História': historia}
+
+    except ValueError:
+        print('Só aceitamos números.')
+
+    for nome, notas in alunos.items():
+        media_aritmerica = sum(notas.values()) / len(notas)
+        print(f'A média de {nome} é de {media_aritmerica}')

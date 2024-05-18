@@ -6,33 +6,41 @@ carteira = dict()
 
 try:
     while True:
-        nome = input('Insira seu nome: ')
+        nome = input('Insira seu nome, [parar para sair]: ')
+        if nome == 'parar':
+            print('Sistema finalizado!')
+            break
         nascimento = int(input('Insira seu ano de nascimento: '))
-        pergunta = input('Possui carteira de trabalho? ("S" para sim, "N" para não)').upper()
+        pergunta = input('Possui carteira de trabalho? ("Sim" para sim, "Não" para não)').upper()
         idade = 2024 - nascimento
 
-        if pergunta == 'N':
+        if pergunta == 'NÃO':
             print('Você não possui carteira de trabalho, então é possível calcular com quantos anos irá se aposentar!')
             break
-        if pergunta == 'S':
+        if pergunta == 'SIM':
             contratacao = int(input('Ano de contratação: '))
             salario = float(input('Valor do seu salário: '))
             contribuicao = 2024 - contratacao
-            if idade >= 62 and contribuicao >= 15:
-                print(f'Você já pode se aposentar! ')
-                break
-            else:
-                total = 62 - idade
-                totalFinal = idade + total
-                print(f'Você tem {idade} anos e irá se aposentar com {totalFinal} anos.')
-                carteira[nome] = {'Nome': nome, 'Nascimento': nascimento,
-                                  'Contribuição': contribuicao, 'Idade que irá se '
-                                                                'aposentar': totalFinal}
-                print(carteira[nome])
-                break
+            totalFinal = contratacao + 35 - nascimento
+            carteira[nome] = {'Nome': nome, 'Idade': idade, 'Nascimento': nascimento, 'Possui carteira de trabalho': pergunta,
+                              'Contribuição': contribuicao, 'Idade que irá se '
+                                                            'aposentar': totalFinal, 'Salário': salario}
+            break
 
 except ValueError:
     print(f"Você digitou algo errado!")
+
+for nome, dados in carteira.items():
+    print('-' * 30)
+    print(f'Nome: {dados["Nome"]}'
+          f'\nIdade: {dados["Idade"]}')
+    if dados['Possui carteira de trabalho']:
+        print(
+              f'Contribuição: {dados["Contribuição"]}'
+              f'\nSalário: R$ {dados["Salário"]}'
+              f'\nVocê ira se aposentar com: {dados["Idade que irá se aposentar"]} anos')
+        print('-' * 30)
+
 
 '''
 
@@ -77,4 +85,4 @@ for i in funcionarios:
               f'\nSalário: R$ {i["salario"]}'
               f'\nAno de aposentadoria: {i["aposentadoria"]}' )
         print('-'*30)
-        '''
+    '''

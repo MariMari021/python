@@ -19,7 +19,7 @@ while True:
         nome = (input('Digite o seu nome [sair para acabar]: '))
         if nome == 'sair':
             break
-        sexo = (input('Digite o seu sexo: ')).strip().upper()
+        sexo = (input('Digite o seu sexo, "feminino" ou "masculino": ')).strip().upper()
         idade = (int(input('Digite sua idade: ')))
 
         somaIdades += idade

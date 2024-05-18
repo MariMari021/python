@@ -1,17 +1,23 @@
 #Crie um programa onde serão informados diversos valores em uma lista.
-# Caso o número já exista ele não será adicionado. No final, serão exibidos todos os valores únicos em ordem crescente
+# Caso o número já exista ele não será adicionado. No final, serão exibidos todos
+# os valores únicos em ordem crescente
 
 
-'''
-valores = []
 
-for ele in range(5):
-    valor = int(input('Digite um valor: '))
 
-    if valor not in valores:
-        valores.append(valor)
+try:
+    valores = []
+    for ele in range(5):
+        valor = int(input('Digite um valor: '))
 
-print(sorted(valores))
+        if valor not in valores:
+            valores.append(valor)
+
+    print(sorted(valores))
+except ValueError:
+    print('Insira apenas números inteiros.')
+
+
 '''
 
 #resolucao do prof
@@ -31,3 +37,4 @@ while True:
 
 print(sorted(lista))
 
+'''

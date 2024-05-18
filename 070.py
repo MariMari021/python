@@ -10,7 +10,7 @@ print(f'O produto mais barato é : {produtos['produtos'][produtos['precos'].inde
 
 '''
 
-
+#resolução do professor
 produtos = {}
 produto = []
 preco = []

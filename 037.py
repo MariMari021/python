@@ -2,15 +2,20 @@
 # e continue pedindo até que o usuário acerte o número.
 # E no final, retorne também a quantidade de tentativas necessárias.
 
+print('----- Acerte o número -----')
+
 import random
 
 contador = 0
 numero = random.randint(1,10)
-numero_pessoa = int(input('Tente adivinhar o número sorteado entre 1 e 10: '))
-print(numero)
-while numero_pessoa != numero:
+try:
     numero_pessoa = int(input('Tente adivinhar o número sorteado entre 1 e 10: '))
-    contador += 1
+    print(numero)
+    while numero_pessoa != numero:
+        numero_pessoa = int(input('Tente adivinhar o número sorteado entre 1 e 10: '))
+        contador += 1
+except ValueError:
+    print('Insira apenas valores númericos')
 '''
 
 #prof

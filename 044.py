@@ -1,35 +1,37 @@
 #Crie um programa para jogar par ou ímpar com o usuário,
 # e só pare quando perder. Ao final deve mostrar a quantidade de vitórias
-'''
+
 print('-------Impar or Par - ProPlayer--------')
 
 import random
 
-
 soma = 0
 contador = 0
 
-
 while True:
-    usuario = input('Impar ou Par? ').strip().upper()
-    valorUsuario = int(input('Digite um valor: '))
-    computador = random.randint(0, 9)
-    soma = valorUsuario + computador
-    if usuario == 'PAR':
-        contador +=1
-        if soma % 2 == 0:
-            print('Você ganhou!Jogue novamente.')
-        else:
-            print(f'A soma dos valores é {soma} e a quantidade de vitórias é {contador}')
-            break
+    try:
+        usuario = input('Impar ou Par? ').strip().upper()
+        valorUsuario = int(input('Digite um valor: '))
+        computador = random.randint(0, 9)
+        soma = valorUsuario + computador
+        if usuario == 'PAR':
+            if soma % 2 == 0:
+                contador += 1
+                print('Você ganhou! Jogue novamente.')
+            else:
+                print(f'A soma dos valores é {soma} e a quantidade de vitórias é {contador}')
+                break
 
-    if usuario == 'ÍMPAR':
-        if soma % 2 > 0:
-            contador += 1
-            print('Você ganhou!Jogue novamente.')
-        else:
-            print(f'A soma dos valores é {soma} e a quantidade de vitórias é {contador}')
-            break
+        if usuario == 'ÍMPAR':
+            if soma % 2 > 0:
+                contador += 1
+                print('Você ganhou! Jogue novamente.')
+            else:
+                print(f'A soma dos valores é {soma} e a quantidade de vitórias é {contador}')
+                break
+    except ValueError:
+        print(f"Erro: Insira valores inteiros.")
+
 
 '''
 
@@ -48,7 +50,7 @@ while True:
               f'\nQuantidade de vitorias: {vitorias}')
         break
 
-
+'''
 
 
 

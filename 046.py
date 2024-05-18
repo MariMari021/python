@@ -9,26 +9,32 @@ soma = 0
 quantidade = 0
 menorProduto = None
 
+print('----- Orçamento de compras -----')
+
 while True:
-    nomeProduto = input('Qual é o nome do produto? ')
-    precoProduto = float(input('Qual é o preço do produto? '))
-    resposta = input('Deseja continuar? [S/N] ->').strip().upper()
+    try:
+        nomeProduto = input('Qual é o nome do produto? ')
+        precoProduto = float(input('Qual é o preço do produto? '))
+        resposta = input('Deseja continuar? [S/N] ->').strip().upper()
 
-    soma += precoProduto
+        soma += precoProduto
 
-    if precoProduto > 1000:
-        quantidade += 1
+        if precoProduto > 1000:
+            quantidade += 1
 
-    if menorProduto == None:
-        menorProduto = precoProduto
+        if menorProduto is None:
+            menorProduto = precoProduto
 
-    if precoProduto < menorProduto:
-        menorProduto = precoProduto
-        nomeMenor = nomeProduto
+        if precoProduto < menorProduto:
+            menorProduto = precoProduto
+            nomeMenor = nomeProduto
 
-    if resposta == 'N':
-        print(f'O total gasto é {soma}, são {quantidade} produtos que custam mais de R$1000,00, o produto mais barato é {nomeMenor}.')
-        break
+        if resposta == 'N':
+            print(f'O total gasto é {soma}, são {quantidade} produtos que custam mais de R$1000,00, o produto mais barato é {nomeMenor}.')
+            break
+
+    except ValueError:
+        print(f"Erro: Insira um preço válido para o produto.")
 
 
 

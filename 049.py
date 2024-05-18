@@ -1,16 +1,25 @@
-#Crie um programa que tenha a função área(), que receba as dimensões de um muro retangular e mostra a área do terreno
+#Crie um programa que tenha a função área(), que receba as dimensões de um muro
+# retangular e mostra a área do terreno
+
+print('----- Calcule a área de um muro retangular -----')
 def area (a, b):
     area = a * b
 
     return area
 
-a = float(input('Digite a dimensão do muro retangular: '))
-b = float(input('Digite a dimensão do muro retangular: '))
+try:
+    a = float(input('Digite a altura do muro retangular: '))
+    b = float(input('Digite o comprimento do muro retangular: '))
 
-if a == b:
-    print('Apenas dimensões de um muro retangular.')
-else:
-    print(f'A área do muro retangular é {area(a, b)}')
+    if a == b:
+        print('Apenas dimensões de um muro retangular.')
+    else:
+        print(f'A área do muro retangular é {area(a, b)}')
+
+except ValueError:
+    print(f"Insira apenas números")
+
+
 
 
 '''

@@ -5,6 +5,8 @@
 #A lista em ordem alfabética
 #Em que posição está “O rei leão”
 
+print('----- Saiba mais sobre os filmes mais assistidos do mundo -----')
+
 
 filmes = ('Avatar', 'Vingadores: Ultimato', 'Avatar: O Caminho da Água', 'Titanic ', 'Star Wars: O Despertar da Força','Vingadores: Guerra Infinita','Homem-Aranha: Sem Volta Para Casa', 'Jurassic World', 'O Rei Leão','Os Vingadores' )
 

@@ -3,31 +3,33 @@
 #Quantas pessoas foram cadastradas
 #Uma listagem com as pessoas com o maior QI
 #Uma listagem com as pessoas de menor QI
-'''
+
 lista = []
 lista_qi = []
 lista_nome = []
 
+try:
+    for ele in range(5):
+        lista_nome.append(input('Nome: '))
+        lista_qi.append(int(input('QI: ')))
 
-for ele in range(5):
-    lista_nome.append(input('Nome: '))
-    lista_qi.append(int(input('QI: ')))
+    lista.append(lista_nome[:])
+    lista.append(lista_qi[:])
 
-lista.append(lista_nome[:])
-lista.append(lista_qi[:])
+    def programaMax(qis):
+        qis = max(lista_qi)
+        return qis
 
-def programaMax(qis):
-    qis = max(lista_qi)
-    return qis
+    def programaMin(qis):
+        qis = min(lista_qi)
+        return qis
 
-def programaMin(qis):
-    qis = min(lista_qi)
-    return qis
+    print(len(lista_nome))
+    print(programaMax(lista_qi))
+    print(programaMin(lista_qi))
 
-
-print(len(lista_nome))
-print(programaMax(lista_qi))
-print(programaMin(lista_qi))
+except ValueError:
+    print(f"Erro: Insira um número inteiro na área do QI.")
 
 '''
 
@@ -59,3 +61,4 @@ print(f'Quantidade de pessoas {len(lista[0])}'
       f'\nEm ordem decrescente{nome_em_ordem_decrescente}'
       f'\nEm ordem crescente {nome_em_ordem}'
       )
+      '''

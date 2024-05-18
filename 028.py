@@ -1,5 +1,7 @@
 #Escreva um programa que imprima os números de 10 a 1 usando um loop
 
+print('----- Veja os números de 10 a 1 -----')
+
 numeros = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 for numero in numeros:

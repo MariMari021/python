@@ -5,6 +5,8 @@
 #     Senai Show de bola
 # ----------------------------
 
+print('----- Formate frases -----')
+
 def formatacao(frase):
     quant_palavras = len(frase)
     tracos = int(quant_palavras + 8)

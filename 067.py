@@ -2,19 +2,24 @@
 # O programa vai perguntar quantos jogos serão gerados e vai sortear 6
 # números entre 1 a 60 para cada jogo, cadastrando tudo em uma lista composta
 
-'''
-palpites = int(input('Quantos palpites você quer gerar? '))
-lista = []
-jogo = []
+print('----- Gerador de Palpites Simulator -----')
 
-import random
-for numero in range(palpites):
-    for ele in range(6):
-        numeros = random.randint(1, 60)
-        jogo.append(numeros)
-    lista.append(jogo[:])
-    jogo.clear()
-print(lista)
+try:
+    palpites = int(input('Quantos palpites você quer gerar? '))
+    lista = []
+    jogo = []
+
+    import random
+    for numero in range(palpites):
+        for ele in range(6):
+            numeros = random.randint(1, 60)
+            jogo.append(numeros)
+        lista.append(jogo[:])
+        jogo.clear()
+    print(lista)
+
+except ValueError:
+    print(f"Erro: Insira apenas valores inteiros.")
 '''
 
 import random
@@ -41,3 +46,4 @@ try:
 except:
     print('ERRO')
 
+'''

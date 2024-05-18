@@ -5,33 +5,38 @@
 # papel: 2
 # tesoura: 3
 
-usuario = int(input('Pedra(1), Papel(2) ou Tesoura(3): '))
+print('----- Jogue JOKEMPO da Mari -----')
 
-import random
+try:
+    usuario = int(input('Pedra(1), Papel(2) ou Tesoura(3): '))
 
-computador = random.randint(1,3)
-print(computador)
-if (usuario == 1) and (computador == 1):
-    print(f'Empate')
-elif (usuario == 2) and (computador == 2):
-    print(f'Empate')
-elif (usuario == 3) and (computador == 3):
-    print(f'Empate')
-elif (usuario == 1) and (computador == 2):
-    print(f'Computador venceu!')
-elif (usuario == 1) and (computador == 3):
-    print(f'Usuário venceu!')
-elif (usuario == 2 ) and (computador == 1):
-    print(f'Usuário venceu!')
-elif (usuario == 2 ) and (computador == 3):
-    print(f'Computador venceu!')
-elif (usuario == 3 ) and (computador == 1):
-    print(f'Computador venceu!')
-elif (usuario == 3 ) and (computador == 2):
-    print(f'Usuario venceu!')
-else:
-    print(f'Opção inválida!')
+    import random
 
+    computador = random.randint(1,3)
+    print(computador)
+    if (usuario == 1) and (computador == 1):
+        print(f'Empate')
+    elif (usuario == 2) and (computador == 2):
+        print(f'Empate')
+    elif (usuario == 3) and (computador == 3):
+        print(f'Empate')
+    elif (usuario == 1) and (computador == 2):
+        print(f'Computador venceu!')
+    elif (usuario == 1) and (computador == 3):
+        print(f'Usuário venceu!')
+    elif (usuario == 2 ) and (computador == 1):
+        print(f'Usuário venceu!')
+    elif (usuario == 2 ) and (computador == 3):
+        print(f'Computador venceu!')
+    elif (usuario == 3 ) and (computador == 1):
+        print(f'Computador venceu!')
+    elif (usuario == 3 ) and (computador == 2):
+        print(f'Usuario venceu!')
+    else:
+        print(f'Opção inválida!')
+
+except ValueError:
+    print("Por favor, insira um valor numérico que seja (1, 2 ou 3).")
 
 # if computador == usuario:
 # print('Empate')

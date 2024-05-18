@@ -1,5 +1,6 @@
 #Crie um programa que retorne a tabuada de um número, e só pare quando o número digitado for 0000
 
+print('----- Veja a tabuada de qualquer número -----')
 
 parar = '0000'
 while True:

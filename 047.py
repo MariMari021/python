@@ -8,28 +8,33 @@
 
 
 while True:
-    saque = int(input('Digite o valor que você deseja sacar: '))
+    try:
+        saque = int(input('Digite o valor que você deseja sacar: '))
 
-    cinquenta = saque // 50
-    saque = saque - cinquenta * 50
+        cinquenta = saque // 50
+        saque = saque - cinquenta * 50
 
-    vinte = saque // 20
-    saque = saque - vinte * 20
+        vinte = saque // 20
+        saque = saque - vinte * 20
 
-    dez = saque // 10
-    saque = saque - dez * 10
+        dez = saque // 10
+        saque = saque - dez * 10
 
-    um = saque // 1
+        um = saque // 1
 
-    print(f'O saque será em cédulas de:'
-          f'\n {cinquenta} cédulas de R$50,00'
-          f'\n {vinte} cédulas de R$20,00'
-          f'\n {dez} cédulas de R$10,00'
-          f'\n {um} cédulas de R$1,00')
-    resposta = input('Deseja continuar? [S/N] ->').strip().upper()
+        print(f'O saque será em cédulas de:'
+              f'\n {cinquenta} cédulas de R$50,00'
+              f'\n {vinte} cédulas de R$20,00'
+              f'\n {dez} cédulas de R$10,00'
+              f'\n {um} cédulas de R$1,00')
+        resposta = input('Deseja continuar? [S/N] ->').strip().upper()
 
-    if resposta == 'N':
-        break
+        if resposta == 'N':
+            break
+
+    except ValueError:
+        print(f"Erro: Insira apenas números.")
+
 
 
 

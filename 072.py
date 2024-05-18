@@ -1,32 +1,38 @@
 #Crie um programa que leia nome, ano de nascimento e carteira de trabalho e cadastre-os (com idade) em um dicionário,
 # se por acaso a Carteira de trabalho for diferente de zero. O Dicionário receberá também o ano de contratação e o saláro.
 # Calcule e apresente, além da idade, com quantos anos a pessoa vai se aposentar
-'''
+
 carteira = dict()
 
-while True:
-    nome = input('Insira seu nome: ')
-    nascimento = int(input('Insira seu ano de nascimento: '))
-    pergunta = input('Possui carteira de trabalho? ("S" para sim, "N" para não)').upper()
-    idade = 2024 - nascimento
+try:
+    while True:
+        nome = input('Insira seu nome: ')
+        nascimento = int(input('Insira seu ano de nascimento: '))
+        pergunta = input('Possui carteira de trabalho? ("S" para sim, "N" para não)').upper()
+        idade = 2024 - nascimento
 
-    if pergunta == 'N':
-        print('Você não possui carteira de trabalho, então é possível calcular com quantos anos irá se aposentar!')
-        break
-    if pergunta == 'S':
-        contratacao = int(input('Ano de contratação: '))
-        salario = float(input('Valor do seu salário: '))
-        contribuicao = 2024 - contratacao
-        if idade >= 62 and contribuicao >= 15:
-            print(f'Você já pode se aposentar! ')
+        if pergunta == 'N':
+            print('Você não possui carteira de trabalho, então é possível calcular com quantos anos irá se aposentar!')
             break
-        else:
-            total = 62 - idade
-            totalFinal = idade + total
-            print(f'Você tem {idade} anos e irá se aposentar com {totalFinal} anos.')
-            carteira[nome] = {'Nome': nome, 'Nascimento': nascimento, 'Contribuição': contribuicao, 'Idade que irá se aposentar': totalFinal}
-            print(carteira[nome])
-            break
+        if pergunta == 'S':
+            contratacao = int(input('Ano de contratação: '))
+            salario = float(input('Valor do seu salário: '))
+            contribuicao = 2024 - contratacao
+            if idade >= 62 and contribuicao >= 15:
+                print(f'Você já pode se aposentar! ')
+                break
+            else:
+                total = 62 - idade
+                totalFinal = idade + total
+                print(f'Você tem {idade} anos e irá se aposentar com {totalFinal} anos.')
+                carteira[nome] = {'Nome': nome, 'Nascimento': nascimento,
+                                  'Contribuição': contribuicao, 'Idade que irá se '
+                                                                'aposentar': totalFinal}
+                print(carteira[nome])
+                break
+
+except ValueError:
+    print(f"Você digitou algo errado!")
 
 '''
 
@@ -71,3 +77,4 @@ for i in funcionarios:
               f'\nSalário: R$ {i["salario"]}'
               f'\nAno de aposentadoria: {i["aposentadoria"]}' )
         print('-'*30)
+        '''

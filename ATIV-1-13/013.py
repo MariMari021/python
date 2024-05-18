@@ -4,10 +4,18 @@
 #Em que posição ela aparece na última vez
 
 
+print('-----Saiba quantas vezes a letra "a" se repete! -----')
+
 frase = input('Digite uma frase: ')
 
-print(f'A letra (a) aparece {frase.count("a")}')
-print(f'A primeira posição é {frase.find("a")}')
-print(f'A última posição é {frase.rfind("a")}')
+if not frase.isalpha():
+    print('Insira apenas letras.')
+
+elif len(frase) == 0:
+    print("Erro: A caixa de entrada não estar vazia.")
+else:
+    print(f'A letra (a) aparece {frase.count("a")} vezes')
+    print(f'A primeira posição é {frase.find("a")}')
+    print(f'A última posição é {frase.rfind("a")}')
 
 

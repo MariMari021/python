@@ -1,6 +1,8 @@
 #Crie um programa onde o usuário digite uma expressão qualquer que use parênteses.
 # Seu aplicativo deverá analisar se a expressão passada está com os parênteses abertos e fechados na ordem correta
 
+print('----- Verifique se a sintaxe dos parenteses -----')
+
 expressao = input('Digite uma expressão que use parênteses: ')
 
 pilha = []

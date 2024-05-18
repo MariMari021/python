@@ -1,23 +1,25 @@
 #Faça um programa com uma função maior e menor, que leia uma lista
 #com 5 valores informados pelo usuário e retorne esses valores e a posição deles
-'''
-idades = []
-for ele in range(5):
-    idades.append(int(input('Digite um valor: ')))
-
 
 def programaMax(idade):
-    idade = max(idades)
-    return idade
+    return max(idade), idade.index(max(idade)) + 1
 
 def programaMin(idade):
-    idade = min(idades)
-    return idade
+    return min(idade), idade.index(min(idade)) + 1
 
+try:
+    idades = []
+    for ele in range(5):
+        idades.append(int(input('Digite um valor: ')))
 
+    maior_valor, posicao_maior = programaMax(idades)
+    menor_valor, posicao_menor = programaMin(idades)
 
-print(f'O maior valor é {programaMax(idades)} e a sua posição é {idades.index(programaMax(idades)) +1}.'
-      f'\n O menor valor é {programaMin(idades)} e a sua posição é {idades.index(programaMin(idades)) +1}')
+    print(f'O maior valor é {maior_valor} e a sua posição é {posicao_maior}.'
+          f'\nO menor valor é {menor_valor} e a sua posição é {posicao_menor}')
+except ValueError as e:
+    print(f"Erro: Insira apenas números inteiros.")
+
 
 '''
 
@@ -45,3 +47,4 @@ for ele in range(5):
 print(maior(lista))
 print(menor(lista))
 
+'''

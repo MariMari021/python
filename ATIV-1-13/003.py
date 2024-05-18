@@ -7,11 +7,9 @@ print('---- Saiba seu nome completo! -----')
 nome = input('Digite seu nome: ')
 sobrenome = input('Digite seu sobrenome: ')
 if not nome.isalpha():
-    print('Insira apenas letras.')
+    print('Insira dados válidos.')
 elif not sobrenome.isalpha():
-    print('Insira apenas letras.')
-elif nome.strip() == '' or sobrenome.strip() == '':
-    print("O nome e sobrenome não podem estar em branco.")
+    print('Insira dados válidos.')
 else:
     nome_completo = nome + ' ' + sobrenome
     print(f'Seu nome completo é: {nome_completo}')

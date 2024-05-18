@@ -103,7 +103,7 @@ for ele in range(3):
     lista_auxiliar.clear()
 
 print(lista)
-print(lista[0][1])'''
+print(lista[0][1])
 
 
 #dicionários
@@ -129,3 +129,38 @@ cadastro = {'Nomes': ['a', 'b', 'c'],
 
 print(cadastro['Idade'])
 print(max(cadastro['Idade']))
+
+
+def soma(a,b):
+    return a + b
+
+
+def somador(*numeros):
+    return sum(numeros)
+
+print(somador(1,2,3,4,5,6))
+
+nomes = ['ju', 'ju', 'ju']
+
+#leitura
+arquivo = open('registro.txt', 'w')
+for nome in nomes:
+    arquivo.write(f'{nome}\n')
+
+arquivo.close()
+
+#Entrada de dados
+arquivo = open('registro.txt', 'w')
+arquivo.write('Olá mundo!')
+arquivo.close()
+
+
+#Adição de dados
+arquivo = open('registro.txt', 'a')
+arquivo.write('\nOlá novamente!!!')
+arquivo.close()
+
+'''
+
+
+
